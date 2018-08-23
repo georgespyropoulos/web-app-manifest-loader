@@ -26,7 +26,7 @@ function resolveImageSrc(loaderContext, image, callback) {
 
       // Update the image src property to match the generated filename
       // Is it always the first key in the assets object?
-      image.src = Object.keys(module.assets)[0];
+      image.src = Object.keys(module.assets || module.buildInfo.assets)[0];
 
       callback(null);
     });
